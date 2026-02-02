@@ -16,7 +16,7 @@
   <meta property="og:title" content="Divyanchal — Official" />
   <meta property="og:description" content="Independent Punjabi artist, writer, and music producer shaping his own sound and world." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-vercel-url.vercel.app" /> <!-- REPLACE with your LIVE URL -->
+  <meta property="og:url" content="https://divyanchal.vercel.app" /> <!-- your live URL -->
   <meta property="og:image" content="https://i.postimg.cc/VrL5wKQz/your-photo.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -121,33 +121,66 @@
       background: transparent;
       position: relative;
       overflow: hidden;
+      color: #ffffff;
     }
     .btns a:hover,
     .btns a:focus {
-      transform: translateY(-4px) scale(1.06);
-      box-shadow: 0 12px 32px rgba(124,58,237,0.4);
-      background: rgba(124,58,237,0.15);
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 16px 40px rgba(124,58,237,0.45);
+      background: rgba(124,58,237,0.25);
       border-color: var(--accent);
+      color: #ffffff;
     }
     .btns a:active {
       transform: translateY(-2px) scale(0.96);
-      box-shadow: 0 4px 16px rgba(124,58,237,0.3);
+      box-shadow: 0 8px 20px rgba(124,58,237,0.3);
       transition: all .12s ease;
     }
     .btns a::before {
       content: '';
       position: absolute;
-      inset: -2px;
+      inset: -4px;
       border-radius: 999px;
-      background: linear-gradient(45deg, transparent, var(--accent), transparent);
+      background: radial-gradient(circle at 30% 107%, var(--accent) 0%, transparent 60%);
       opacity: 0;
       transition: opacity .4s ease;
       pointer-events: none;
+      filter: blur(8px);
     }
     .btns a:hover::before {
-      opacity: 0.6;
+      opacity: 0.8;
     }
     .btn-primary { background: var(--accent); border: none; color: white; }
+
+    /* Glow for social links in Connect */
+    #connect p a {
+      display: block;
+      margin: 12px 0;
+      padding: 10px 0;
+      transition: all .3s ease;
+      position: relative;
+      color: var(--muted);
+    }
+    #connect p a:hover,
+    #connect p a:focus {
+      color: var(--accent);
+      transform: translateX(8px);
+      text-shadow: 0 0 12px rgba(124,58,237,0.7);
+    }
+    #connect p a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+      transition: width .3s ease;
+    }
+    #connect p a:hover::after {
+      width: 100%;
+    }
 
     section { padding: 80px 0 60px; border-top: 1px solid #1f1f1f; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
