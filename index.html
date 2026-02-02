@@ -6,17 +6,14 @@
   <title>Divyanchal — Official Website</title>
   <meta name="description" content="Official website of Divyanchal, independent Punjabi artist, writer & music producer from Bhopal." />
 
-  <!-- Favicons -->
   <link rel="icon" href="https://i.postimg.cc/VrL5wKQz/your-photo.jpg" type="image/jpeg">
 
-  <!-- Theme color -->
   <meta name="theme-color" content="#0b0b0b">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Divyanchal — Official" />
   <meta property="og:description" content="Independent Punjabi artist, writer, and music producer shaping his own sound and world." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://divyanchal.vercel.app" /> <!-- your live URL -->
+  <meta property="og:url" content="https://divyanchal.vercel.app" />
   <meta property="og:image" content="https://i.postimg.cc/VrL5wKQz/your-photo.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -152,36 +149,6 @@
     }
     .btn-primary { background: var(--accent); border: none; color: white; }
 
-    /* Glow for social links in Connect */
-    #connect p a {
-      display: block;
-      margin: 12px 0;
-      padding: 10px 0;
-      transition: all .3s ease;
-      position: relative;
-      color: var(--muted);
-    }
-    #connect p a:hover,
-    #connect p a:focus {
-      color: var(--accent);
-      transform: translateX(8px);
-      text-shadow: 0 0 12px rgba(124,58,237,0.7);
-    }
-    #connect p a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-      transition: width .3s ease;
-    }
-    #connect p a:hover::after {
-      width: 100%;
-    }
-
     section { padding: 80px 0 60px; border-top: 1px solid #1f1f1f; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
 
@@ -207,6 +174,40 @@
       font-size: 13px;
       font-weight: 500;
       margin-bottom: 16px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(30,30,30,0.6);
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      transition: all .3s ease;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(124,58,237,0.3);
+      background: rgba(124,58,237,0.18);
+      border-color: var(--accent);
+    }
+
+    .social-link svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
     }
 
     .video-wrapper {
@@ -385,15 +386,30 @@
   <div class="grid">
     <div class="card">
       <h3>Social</h3>
-      <p>
-        <a href="https://www.youtube.com/@divyanchall" target="_blank">YouTube</a><br>
-        <a href="https://x.com/realdivyanchal" target="_blank">X (Twitter)</a><br>
-        <a href="https://www.snapchat.com/add/divyanchalboii?share_id=Pi3RXfrD5xw&locale=en-IN" target="_blank">Snapchat</a>
-      </p>
+      <div class="social-links">
+        <a href="https://www.youtube.com/@divyanchall" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          YouTube
+        </a>
+        <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.228.228 2.695.072 7.053.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.156 4.358 2.623 6.825 6.981 6.981C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.358-.156 6.825-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947C23.986 8.333 24 7.925 24 4.667 24 1.408 23.986.999 23.928-.281c-.156-4.358-2.623-6.825-6.981-6.981C15.667.014 15.259 0 12 0z"/></svg>
+          Instagram
+        </a>
+        <a href="https://x.com/realdivyanchal" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.5 22h-6.7l-5.2-6.8L5.8 22H2.7l7.3-8.4L.5 2h6.9l4.7 6.2L18.9 2z"/></svg>
+          X (Twitter)
+        </a>
+        <a href="https://www.snapchat.com/add/divyanchalboii?share_id=Pi3RXfrD5xw&locale=en-IN" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5c-3.9 0-7 3.1-7 7v1.8c0 .6-.4 1.1-1 1.3l-1 .4c-.7.3-1 .9-.6 1.5.5.8 1.8 1.5 3.5 1.9.4.1.7.4.8.8.3 1.1.8 2.7 1.7 3.8 1.1 1.4 2.6 2.3 4.6 2.3s3.5-.9 4.6-2.3c.9-1.1 1.4-2.7 1.7-3.8.1-.4.4-.7.8-.8 1.7-.4 3-1.1 3.5-1.9.4-.6.1-1.2-.6-1.5l-1-.4c-.6-.2-1-.7-1-1.3V8.5c0-3.9-3.1-7-7-7z"/></svg>
+          Snapchat
+        </a>
+      </div>
     </div>
     <div class="card">
       <h3>Contact</h3>
-      <p>Email: <a href="mailto:singhdivyanchal@gmail.com">singhdivyanchal@gmail.com</a></p>
+      <p>
+        Email: <a href="mailto:singhdivyanchal@gmail.com">singhdivyanchal@gmail.com</a>
+      </p>
     </div>
   </div>
 </section>
