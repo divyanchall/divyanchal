@@ -10,17 +10,15 @@
   <link rel="icon" href="https://files.catbox.moe/3j4z0k.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="https://files.catbox.moe/3j4z0k.jpg">
 
-  <!-- Theme color for mobile browsers -->
+  <!-- Theme color -->
   <meta name="theme-color" content="#0b0b0b">
 
-  <!-- Open Graph / Social sharing -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Divyanchal — Official" />
   <meta property="og:description" content="Independent Punjabi artist, writer, and music producer shaping his own sound and world." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://divyanchal.vercel.app" /> <!-- ← replace with your live URL -->
-  <meta property="og:image" content="https://files.catbox.moe/3j4z0k.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://your-vercel-url.vercel.app" /> <!-- REPLACE with your LIVE URL after deploy -->
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/333/fff?text=Divyanchal" /> <!-- REPLACE with your photo/banner -->
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -110,8 +108,8 @@
       display: flex; align-items: center; justify-content: center; gap: 12px;
       flex-wrap: wrap;
     }
-    h2 { font-size: 28px; margin: 0 0 20px; font-weight: 600; }
-    p { color: var(--muted); max-width: 680px; margin: 0 auto 28px; }
+    h2 { font-size: 28px; margin: 0 0 20px; font-weight: 600; text-align: center; }
+    p { color: var(--muted); max-width: 680px; margin: 0 auto 28px; text-align: center; }
 
     .btns a {
       display: inline-block;
@@ -121,10 +119,17 @@
       border: 1px solid #2a2a2a;
       font-weight: 500;
       transition: all .28s ease;
+      background: transparent;
     }
     .btns a:hover, .btns a:focus {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,.35);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(124,58,237,0.3);
+      background: rgba(124,58,237,0.1);
+    }
+    .btns a:active {
+      transform: translateY(-2px) scale(0.97);
+      box-shadow: 0 4px 12px rgba(0,0,0,.4);
+      transition: all .1s ease;
     }
     .btn-primary { background: var(--accent); border: none; color: white; }
 
@@ -155,10 +160,28 @@
       margin-bottom: 16px;
     }
 
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #111;
+    }
     iframe {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%; height: 100%;
-      border: 0; border-radius: 12px;
-      position: absolute; top: 0; left: 0;
+      border: 0;
+    }
+    .fallback-link {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .fallback-link a {
+      color: var(--accent);
+      font-weight: 500;
     }
 
     .reveal { opacity: 0; transform: translateY(50px); transition: all .9s ease; }
@@ -243,7 +266,13 @@
   <div>
     <span class="tag">Official</span>
     <div class="avatar-container" onclick="openModal()">
-      <img src="https://files.catbox.moe/3j4z0k.jpg" alt="Divyanchal at work" class="avatar">
+      <img 
+        src="https://files.catbox.moe/3j4z0k.jpg" 
+        alt="Divyanchal at work" 
+        class="avatar" 
+        loading="lazy" 
+        onerror="this.src='https://via.placeholder.com/148/333/fff?text=Photo+Not+Loaded'; this.onerror=null;"
+      >
     </div>
     <h1>
       Divyanchal
@@ -262,9 +291,15 @@
 
 <!-- Image Modal -->
 <div id="imageModal">
-  <span class="close" onclick="closeModal()">&times;</span>
+  <span class="close" onclick="closeModal()">×</span>
   <div class="modal-content">
-    <img id="modalImg" src="https://files.catbox.moe/3j4z0k.jpg" alt="Divyanchal enlarged">
+    <img 
+      id="modalImg" 
+      src="https://files.catbox.moe/3j4z0k.jpg" 
+      alt="Divyanchal enlarged" 
+      loading="lazy" 
+      onerror="this.src='https://via.placeholder.com/700/333/fff?text=Photo+Not+Loaded';"
+    >
   </div>
 </div>
 
@@ -273,16 +308,18 @@
   <div class="grid">
     <div class="card">
       <h3 style="margin-bottom: 10px;">Latest YouTube Upload</h3>
-      <div style="position:relative; padding-top:56.25%; border-radius:14px; overflow:hidden; background:#111;">
+      <div class="video-wrapper">
         <iframe 
-          src="https://www.youtube.com/embed/horkYz6f3XE" 
-          title="Tu he hai | New Song | Latest Punjabi Song by Divyanchal"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="no-referrer"
-          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+          src="https://www.youtube-nocookie.com/embed/horkYz6f3XE" 
+          title="Tu he hai | New Song | Latest Punjabi Song by Divyanchal" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
           allowfullscreen 
           loading="lazy">
         </iframe>
+      </div>
+      <div class="fallback-link">
+        If the video doesn't load, <a href="https://www.youtube.com/watch?v=horkYz6f3XE" target="_blank">watch on YouTube</a>
       </div>
     </div>
     <div class="card">
@@ -320,7 +357,7 @@
 
 <footer class="container">
   <p>© <span id="year"></span> Divyanchal. All rights reserved.</p>
-  <p style="margin-top:12px; color:#6b7280;">Made with <span style="color:#ef4444">❤</span> in Bhopal</p>
+  <p style="margin-top:12px; color:#6b7280;">Made with <span style="color:#ef4444">♥</span> by Divyanchal</p>
 </footer>
 
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -328,14 +365,12 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
 
-  // Top bar hide
   const bar = document.getElementById('topSocial');
   let lastScroll = 0;
   window.addEventListener('scroll', () => {
@@ -343,11 +378,9 @@
     bar.classList.toggle('hide', current > lastScroll && current > 100);
     lastScroll = current;
 
-    // Back to top visibility
     document.getElementById('backToTop').classList.toggle('show', current > 400);
   });
 
-  // Mouse effects
   window.addEventListener('mousemove', e => {
     const x = (e.clientX / window.innerWidth) * 100;
     const y = (e.clientY / window.innerHeight) * 100;
@@ -362,7 +395,6 @@
     document.documentElement.style.setProperty('--my', `calc(50% + ${s}px)`);
   });
 
-  // Modal
   function openModal() {
     document.getElementById('imageModal').style.display = 'flex';
   }
