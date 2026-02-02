@@ -7,8 +7,7 @@
   <meta name="description" content="Official website of Divyanchal, independent Punjabi artist, writer & music producer from Bhopal." />
 
   <!-- Favicons -->
-  <link rel="icon" href="https://files.catbox.moe/3j4z0k.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="https://files.catbox.moe/3j4z0k.jpg">
+  <link rel="icon" href="https://i.postimg.cc/VrL5wKQz/your-photo.jpg" type="image/jpeg">
 
   <!-- Theme color -->
   <meta name="theme-color" content="#0b0b0b">
@@ -17,8 +16,8 @@
   <meta property="og:title" content="Divyanchal — Official" />
   <meta property="og:description" content="Independent Punjabi artist, writer, and music producer shaping his own sound and world." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-vercel-url.vercel.app" /> <!-- REPLACE with your LIVE URL after deploy -->
-  <meta property="og:image" content="https://via.placeholder.com/1200x630/333/fff?text=Divyanchal" /> <!-- REPLACE with your photo/banner -->
+  <meta property="og:url" content="https://your-vercel-url.vercel.app" /> <!-- REPLACE with your LIVE URL -->
+  <meta property="og:image" content="https://i.postimg.cc/VrL5wKQz/your-photo.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -118,18 +117,35 @@
       border-radius: 999px;
       border: 1px solid #2a2a2a;
       font-weight: 500;
-      transition: all .28s ease;
+      transition: all .3s ease;
       background: transparent;
+      position: relative;
+      overflow: hidden;
     }
-    .btns a:hover, .btns a:focus {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 12px 24px rgba(124,58,237,0.3);
-      background: rgba(124,58,237,0.1);
+    .btns a:hover,
+    .btns a:focus {
+      transform: translateY(-4px) scale(1.06);
+      box-shadow: 0 12px 32px rgba(124,58,237,0.4);
+      background: rgba(124,58,237,0.15);
+      border-color: var(--accent);
     }
     .btns a:active {
-      transform: translateY(-2px) scale(0.97);
-      box-shadow: 0 4px 12px rgba(0,0,0,.4);
-      transition: all .1s ease;
+      transform: translateY(-2px) scale(0.96);
+      box-shadow: 0 4px 16px rgba(124,58,237,0.3);
+      transition: all .12s ease;
+    }
+    .btns a::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 999px;
+      background: linear-gradient(45deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;
+    }
+    .btns a:hover::before {
+      opacity: 0.6;
     }
     .btn-primary { background: var(--accent); border: none; color: white; }
 
@@ -187,14 +203,12 @@
     .reveal { opacity: 0; transform: translateY(50px); transition: all .9s ease; }
     .reveal.active { opacity: 1; transform: none; }
 
-    /* Verified tick */
     .verified-tick {
       color: #1DA1F2;
       display: inline-flex; align-items: center;
     }
     .verified-tick svg { width: 32px; height: 32px; }
 
-    /* Modal */
     #imageModal {
       display: none; position: fixed; inset: 0; z-index: 2000;
       background: rgba(0,0,0,0.94); backdrop-filter: blur(8px);
@@ -217,7 +231,6 @@
     }
     .close:hover { color: var(--accent); transform: scale(1.2); }
 
-    /* Back to top */
     #backToTop {
       position: fixed; bottom: 24px; right: 24px;
       width: 48px; height: 48px;
@@ -229,7 +242,6 @@
     }
     #backToTop.show { opacity: 1; visibility: visible; }
 
-    /* Grain + cursor */
     body::after {
       content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
@@ -254,7 +266,6 @@
 <body>
 <div class="cursor" id="cursor"></div>
 
-<!-- Top bar -->
 <div class="top-social" id="topSocial">
   <a class="primary" href="https://www.youtube.com/@divyanchall" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/></svg></a>
   <a href="https://www.youtube.com/@divyanchall" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
@@ -267,11 +278,11 @@
     <span class="tag">Official</span>
     <div class="avatar-container" onclick="openModal()">
       <img 
-        src="https://files.catbox.moe/3j4z0k.jpg" 
+        src="https://i.postimg.cc/VrL5wKQz/your-photo.jpg" 
         alt="Divyanchal at work" 
         class="avatar" 
         loading="lazy" 
-        onerror="this.src='https://via.placeholder.com/148/333/fff?text=Photo+Not+Loaded'; this.onerror=null;"
+        onerror="this.src='https://via.placeholder.com/148/333/fff?text=Photo';"
       >
     </div>
     <h1>
@@ -289,16 +300,15 @@
   </div>
 </header>
 
-<!-- Image Modal -->
 <div id="imageModal">
   <span class="close" onclick="closeModal()">×</span>
   <div class="modal-content">
     <img 
       id="modalImg" 
-      src="https://files.catbox.moe/3j4z0k.jpg" 
+      src="https://i.postimg.cc/VrL5wKQz/your-photo.jpg" 
       alt="Divyanchal enlarged" 
       loading="lazy" 
-      onerror="this.src='https://via.placeholder.com/700/333/fff?text=Photo+Not+Loaded';"
+      onerror="this.src='https://via.placeholder.com/700/333/fff?text=Photo';"
     >
   </div>
 </div>
